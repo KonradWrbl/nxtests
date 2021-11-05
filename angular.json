@@ -123,6 +123,32 @@
       },
       "tags": [],
       "implicitDependencies": ["testapp"]
+    },
+    "testapp-list": {
+      "projectType": "library",
+      "root": "libs/testapp/list",
+      "sourceRoot": "libs/testapp/list/src",
+      "prefix": "testwp",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/testapp/list"],
+          "options": {
+            "jestConfig": "libs/testapp/list/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/testapp/list/src/**/*.ts",
+              "libs/testapp/list/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
     }
   }
 }

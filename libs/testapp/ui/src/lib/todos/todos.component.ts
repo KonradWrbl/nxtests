@@ -7,5 +7,5 @@ import { Todo } from '@testwp/shared/data-access';
   styleUrls: ['./todos.component.scss']
 })
 export class TodosComponent {
-  @Input() todos: Todo[] = []
+  @Input() todos: Todo[] | null = []
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Todo } from '@testwp/shared/data-access';
+import { TodoService } from '@testwp/shared/data-access';
 
 @Component({
   selector: 'testwp-list',
@@ -8,10 +8,11 @@ import { Todo } from '@testwp/shared/data-access';
 })
 export class ListComponent {
 
-  todos: Todo[] = [{ title: 'Todo 1' }, { title: 'Todo 2' }];
-
-  addTodo() {
-    this.todos.push({ title: `New todo: ${Math.floor(Math.random() * 1000)}`})
+  constructor(public todoService: TodoService) {
   }
 
+  addTodo() {
+    const todoNo = Math.floor(Math.random() * 1000)
+    this.todoService.addTodo({ title: `New todo: ${todoNo}`, description: 'description' + todoNo})
+  }
 }

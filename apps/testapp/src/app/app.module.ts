@@ -3,11 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
-import { TestappFeatureListModule } from '@testwp/testapp/feature-list';
 
 const routes: Routes = [
-  {path: '',
-    loadChildren: () => import('../../../../libs/testapp/feature-list/src/lib/testapp-feature-list.module').then(m => m.TestappFeatureListModule)
+  {
+    path: '',
+    loadChildren: () => import('../../../../libs/testapp/feature-list/src/lib/testapp-feature-list.module').then(m => m.TestappFeatureListModule),
+  },
+  {
+    path: 'details',
+    loadChildren: () => import('../../../../libs/testapp/feature-details/src/lib/testapp-feature-details.module').then(m => m.TestappFeatureDetailsModule)
   }
 ]
 

@@ -1,9 +1,32 @@
 {
-  "cli": {
-    "analytics": false
-  },
   "version": 1,
   "projects": {
+    "shared-data-access": {
+      "projectType": "library",
+      "root": "libs/shared/data-access",
+      "sourceRoot": "libs/shared/data-access/src",
+      "prefix": "testwp",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/data-access"],
+          "options": {
+            "jestConfig": "libs/shared/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/data-access/src/**/*.ts",
+              "libs/shared/data-access/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
     "testapp": {
       "projectType": "application",
       "root": "apps/testapp",
@@ -127,6 +150,58 @@
       "tags": [],
       "implicitDependencies": ["testapp"]
     },
+    "testapp-feature-details": {
+      "projectType": "library",
+      "root": "libs/testapp/feature-details",
+      "sourceRoot": "libs/testapp/feature-details/src",
+      "prefix": "testwp",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/testapp/feature-details"],
+          "options": {
+            "jestConfig": "libs/testapp/feature-details/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/testapp/feature-details/src/**/*.ts",
+              "libs/testapp/feature-details/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": ["scope:testapp", "type:feature"]
+    },
+    "testapp-feature-list": {
+      "projectType": "library",
+      "root": "libs/testapp/feature-list",
+      "sourceRoot": "libs/testapp/feature-list/src",
+      "prefix": "testwp",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/testapp/feature-list"],
+          "options": {
+            "jestConfig": "libs/testapp/feature-list/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/testapp/feature-list/src/**/*.ts",
+              "libs/testapp/feature-list/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": ["scope:testapp", "type:feature"]
+    },
     "testapp-list": {
       "projectType": "library",
       "root": "libs/testapp/list",
@@ -147,6 +222,32 @@
             "lintFilePatterns": [
               "libs/testapp/list/src/**/*.ts",
               "libs/testapp/list/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
+    "testapp-ui": {
+      "projectType": "library",
+      "root": "libs/testapp/ui",
+      "sourceRoot": "libs/testapp/ui/src",
+      "prefix": "testwp",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/testapp/ui"],
+          "options": {
+            "jestConfig": "libs/testapp/ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/testapp/ui/src/**/*.ts",
+              "libs/testapp/ui/src/**/*.html"
             ]
           }
         }

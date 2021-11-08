@@ -15,7 +15,15 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@testwp/testapp/list": ["libs/testapp/list/src/index.ts"]
+      "@testwp/shared/data-access": ["libs/shared/data-access/src/index.ts"],
+      "@testwp/testapp/feature-details": [
+        "libs/testapp/feature-details/src/index.ts"
+      ],
+      "@testwp/testapp/feature-list": [
+        "libs/testapp/feature-list/src/index.ts"
+      ],
+      "@testwp/testapp/list": ["libs/testapp/list/src/index.ts"],
+      "@testwp/testapp/ui": ["libs/testapp/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

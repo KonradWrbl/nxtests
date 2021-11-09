@@ -8,16 +8,12 @@ const routes: Routes = [
   {
     path: ':id',
     component: DetailsComponent,
-  }
-]
+  },
+];
 
 @NgModule({
   imports: [CommonModule, RouterModule.forChild(routes), TestappUiModule],
-  declarations: [
-    DetailsComponent
-  ],
-  exports: [
-    DetailsComponent
-  ],
+  declarations: [DetailsComponent],
+  exports: [DetailsComponent],
 })
 export class TestappFeatureDetailsModule {}

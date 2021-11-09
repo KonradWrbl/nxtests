@@ -7,20 +7,13 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    component: ListComponent
-  }
-]
+    component: ListComponent,
+  },
+];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    TestappUiModule,
-    RouterModule.forChild(routes)],
-  declarations: [
-    ListComponent
-  ],
-  exports: [
-    ListComponent
-  ],
+  imports: [CommonModule, TestappUiModule, RouterModule.forChild(routes)],
+  declarations: [ListComponent],
+  exports: [ListComponent],
 })
 export class TestappFeatureListModule {}

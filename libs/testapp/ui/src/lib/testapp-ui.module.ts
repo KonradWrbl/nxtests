@@ -6,13 +6,7 @@ import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [CommonModule, RouterModule],
-  declarations: [
-    TodosComponent,
-    TodoDetailsComponent
-  ],
-  exports: [
-    TodosComponent,
-    TodoDetailsComponent
-  ],
+  declarations: [TodosComponent, TodoDetailsComponent],
+  exports: [TodosComponent, TodoDetailsComponent],
 })
 export class TestappUiModule {}
